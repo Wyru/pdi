@@ -1,2 +1,8 @@
-# pdi
-PDI de nivelamento do trampo
+# PDI
+PDI de nivelamento do trampo.
+
+ - [] SOLID
+ - [] RabbitMQ
+ - [] Keycloak
+ - [] Kubernetes
+ - [] Event Driven
