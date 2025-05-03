@@ -8,14 +8,12 @@ namespace StateMachine.src.Entities.Enemy.EGeneric.States
 
         public override void OnEnter() {
             base.OnEnter();
+            context.SetIdleGraphics();
         }
 
-        public override void OnLeave() {
-            Console.WriteLine("Inimigo saindo da ociosidade");
-        }
+        public override void OnLeave() {}
 
         public override IState? Update() {
-            Console.WriteLine("Inimigo está ocioso...");
 
             // Após 3 segundos, começa a patrulhar
             if (StateTimeExpired(3)) {

@@ -39,5 +39,12 @@
                 Y = y;
             }
         }
+
+        public int Distance(Transform another) {
+            return (int) MathF.Sqrt(
+                MathF.Pow(another.X - X, 2) +
+                MathF.Pow(another.Y - Y, 2)
+            );
+        }
     }
 }

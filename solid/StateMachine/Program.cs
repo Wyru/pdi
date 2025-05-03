@@ -3,16 +3,16 @@ using StateMachine.src.Entities;
 using StateMachine.src.Entities.Enemy.EGeneric;
 
 var player = new Player();
-player.transform.SetPosition(14, 14);
+player.transform.SetPosition(20, 20);
 
-var wolf1 = new EGeneric("wolf1");
+var wolf1 = new EGeneric("wolf1", player);
 wolf1.transform.SetPosition(1, 1);
 
-var wolf2 = new EGeneric("wolf2");
-wolf1.transform.SetPosition(10, 1);
+var wolf2 = new EGeneric("wolf2", player);
+wolf2.transform.SetPosition(20, 1);
 
-var wolf3 = new EGeneric("wolf3");
-wolf1.transform.SetPosition(1, 10);
+var wolf3 = new EGeneric("wolf3", player);
+wolf3.transform.SetPosition(1, 20);
 
 IEnumerable<EGeneric> enemies = [
     wolf1,
@@ -21,6 +21,6 @@ IEnumerable<EGeneric> enemies = [
 ];
 
 
-GameWindow window = new();
+GameWindow window = new(player, enemies);
 
 

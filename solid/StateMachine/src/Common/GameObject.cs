@@ -7,9 +7,8 @@
         protected GameObject() {
             this.transform = new Transform(0,0);
         }
+        public virtual void Update() { }
 
-        public virtual string Render() {
-            return "X";
-        }
+        public virtual void Render() {}
     }
 }

@@ -15,7 +15,8 @@ namespace StateMachine.src.Entities.Enemy.EGeneric
         private static readonly List<Type> validStatesTypes =
         [
             typeof(IdleState),
-            typeof(PatrollingState)
+            typeof(PatrollingState),
+            typeof(ChasingPlayer)
         ];
 
         private readonly List<EGenericState> states;
