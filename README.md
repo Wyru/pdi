@@ -1,7 +1,7 @@
 # PDI
 PDI de nivelamento do trampo.
 
- - [ ] SOLID
+ - [x] SOLID
  - [ ] RabbitMQ
  - [ ] Keycloak
  - [ ] Kubernetes
