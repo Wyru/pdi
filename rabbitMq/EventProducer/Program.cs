@@ -1,18 +1,19 @@
-﻿using RabbitMQ.Client;
-using System.Text;
+﻿using System.Text;
+using RabbitMQ.Client;
 
 class Program
 {
     private const string ExchangeDirect = "tarefas_exchange";
-    private const string ExchangeFanout = "notificacoes_exchange";
     private const string QueueTarefas = "tarefas_queue";
 
-    static async Task Main(string[] args) {
-        var factory = new ConnectionFactory() {
+    static async Task Main(string[] args)
+    {
+        var factory = new ConnectionFactory()
+        {
             HostName = "localhost",
             Port = 5672,
             UserName = "admin",
-            Password = "senha123"
+            Password = "admin123"
         };
 
         using var connection = await factory.CreateConnectionAsync();
@@ -20,7 +21,6 @@ class Program
 
         // Configuração dos Exchanges e Filas
         await channel.ExchangeDeclareAsync(ExchangeDirect, ExchangeType.Direct);
-        await channel.ExchangeDeclareAsync(ExchangeFanout, ExchangeType.Fanout);
 
         // Fila de tarefas (Quests)
         await channel.QueueDeclareAsync(
@@ -34,16 +34,17 @@ class Program
 
         await channel.QueueBindAsync(queue: QueueTarefas, exchange: ExchangeDirect, routingKey: "quest");
 
-        while (true) {
+        while (true)
+        {
             Console.Clear();
-            Console.WriteLine("=== RPG Quest Publisher ===");
+            Console.WriteLine("=== RABBIT RPG | Quest Publisher ===");
             Console.WriteLine("1. Criar Nova Quest");
             Console.WriteLine("2. Gerar 5 Quests Automáticas");
-            Console.WriteLine("3. Enviar Notificação Global");
-            Console.WriteLine("4. Sair");
+            Console.WriteLine("3. Sair");
             Console.Write("Escolha: ");
 
-            switch (Console.ReadLine()) {
+            switch (Console.ReadLine())
+            {
                 case "1":
                     await CriarQuestManual(channel);
                     break;
@@ -51,10 +52,7 @@ class Program
                     await GerarQuestsAutomaticas(channel);
                     break;
                 case "3":
-                    await EnviarNotificacaoGlobal(channel);
                     break;
-                case "4":
-                    return;
                 default:
                     Console.WriteLine("Opção inválida!");
                     await Task.Delay(1000);
@@ -63,7 +61,8 @@ class Program
         }
     }
 
-    static async Task CriarQuestManual(IChannel channel) {
+    static async Task CriarQuestManual(IChannel channel)
+    {
         Console.Clear();
         Console.WriteLine("=== Nova Quest ===");
 
@@ -81,12 +80,14 @@ class Program
         Console.WriteLine("5. Treinamento (5s)");
         Console.Write("Escolha: ");
 
-        if (!int.TryParse(Console.ReadLine(), out var tipo) || tipo < 1 || tipo > 5) {
+        if (!int.TryParse(Console.ReadLine(), out var tipo) || tipo < 1 || tipo > 5)
+        {
             Console.WriteLine("Tipo inválido!");
             return;
         }
 
-        var duracao = tipo switch {
+        var duracao = tipo switch
+        {
             1 => 30,
             2 => 20,
             3 => 15,
@@ -102,7 +103,8 @@ class Program
         await Task.Delay(1500);
     }
 
-    static async Task GerarQuestsAutomaticas(IChannel channel) {
+    static async Task GerarQuestsAutomaticas(IChannel channel)
+    {
         var quests = new[] {
             new { Nome = "Dragão da Montanha", Descricao = "Derrote o dragão que aterroriza o reino", Tipo = 1 },
             new { Nome = "Ervas Medicinais", Descricao = "Colete 10 ervas raras na floresta", Tipo = 2 },
@@ -114,8 +116,10 @@ class Program
         Console.Clear();
         Console.WriteLine("Gerando Quests Automáticas...\n");
 
-        foreach (var q in quests) {
-            var duracao = q.Tipo switch {
+        foreach (var q in quests)
+        {
+            var duracao = q.Tipo switch
+            {
                 1 => 30,
                 2 => 20,
                 3 => 15,
@@ -134,18 +138,8 @@ class Program
         await Task.Delay(1500);
     }
 
-    static async Task EnviarNotificacaoGlobal(IChannel channel) {
-        Console.Clear();
-        Console.WriteLine("=== Notificação Global ===");
-        Console.Write("Mensagem: ");
-        var msg = Console.ReadLine();
-
-        await PublicarMensagem(channel, ExchangeFanout, "", msg);
-        Console.WriteLine("\nNotificação enviada a todos!");
-        await Task.Delay(1500);
-    }
-
-    static async Task PublicarMensagem(IChannel channel, string exchange, string routingKey, string mensagem) {
+    static async Task PublicarMensagem(IChannel channel, string exchange, string routingKey, string mensagem)
+    {
         var body = Encoding.UTF8.GetBytes(mensagem);
         await channel.BasicPublishAsync(
             exchange: exchange,
