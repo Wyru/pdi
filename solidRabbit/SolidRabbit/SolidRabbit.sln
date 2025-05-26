@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B9FA65C0-562B-4A42-9980-5056A8947AAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolidRabbit.Core", "Core\SolidRabbit.Core.csproj", "{5CB70230-1EC3-4274-8A51-E8723F0BBCAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolidRabbit.Messaging", "Messaging\SolidRabbit.Messaging.csproj", "{6AB4BC28-A5A4-4506-BF02-7ACE75EC0346}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolidRabbit.Game", "Game\SolidRabbit.Game.csproj", "{338F3D72-6DB3-4E9E-BBC9-50EEB1D08F47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolidRabbit.PlayerApp", "PlayerApp\SolidRabbit.PlayerApp.csproj", "{80DAEE2D-0027-4B8C-89FD-72F45A8DE9BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolidRabbit.EnemyApp", "EnemyApp\SolidRabbit.EnemyApp.csproj", "{30A3EFCA-FE2C-4485-A42D-62948A5A75F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5CB70230-1EC3-4274-8A51-E8723F0BBCAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CB70230-1EC3-4274-8A51-E8723F0BBCAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CB70230-1EC3-4274-8A51-E8723F0BBCAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CB70230-1EC3-4274-8A51-E8723F0BBCAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AB4BC28-A5A4-4506-BF02-7ACE75EC0346}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AB4BC28-A5A4-4506-BF02-7ACE75EC0346}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AB4BC28-A5A4-4506-BF02-7ACE75EC0346}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AB4BC28-A5A4-4506-BF02-7ACE75EC0346}.Release|Any CPU.Build.0 = Release|Any CPU
+		{338F3D72-6DB3-4E9E-BBC9-50EEB1D08F47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{338F3D72-6DB3-4E9E-BBC9-50EEB1D08F47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{338F3D72-6DB3-4E9E-BBC9-50EEB1D08F47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{338F3D72-6DB3-4E9E-BBC9-50EEB1D08F47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80DAEE2D-0027-4B8C-89FD-72F45A8DE9BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80DAEE2D-0027-4B8C-89FD-72F45A8DE9BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80DAEE2D-0027-4B8C-89FD-72F45A8DE9BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80DAEE2D-0027-4B8C-89FD-72F45A8DE9BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30A3EFCA-FE2C-4485-A42D-62948A5A75F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30A3EFCA-FE2C-4485-A42D-62948A5A75F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30A3EFCA-FE2C-4485-A42D-62948A5A75F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30A3EFCA-FE2C-4485-A42D-62948A5A75F0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5CB70230-1EC3-4274-8A51-E8723F0BBCAE} = {B9FA65C0-562B-4A42-9980-5056A8947AAB}
+		{6AB4BC28-A5A4-4506-BF02-7ACE75EC0346} = {B9FA65C0-562B-4A42-9980-5056A8947AAB}
+		{338F3D72-6DB3-4E9E-BBC9-50EEB1D08F47} = {B9FA65C0-562B-4A42-9980-5056A8947AAB}
+		{80DAEE2D-0027-4B8C-89FD-72F45A8DE9BB} = {B9FA65C0-562B-4A42-9980-5056A8947AAB}
+		{30A3EFCA-FE2C-4485-A42D-62948A5A75F0} = {B9FA65C0-562B-4A42-9980-5056A8947AAB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {29435DA2-E56B-4CC5-BFDC-96198B3B12F2}
+	EndGlobalSection
+EndGlobal
